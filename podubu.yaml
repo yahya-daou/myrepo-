@@ -1,19 +1,26 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: my-deployment
+  name: ntp-pod3
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-container
-        image: yahyadaoudi/servers:latest 
-        ports:
-        - containerPort: 123
+  containers:
+  - name: ntp-container
+
+    image: yahyadaoudi/servers:latest
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/ntp.conf
+      subPath: ntp.conf
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 123
+volumes:
+- name: config-volume
+  configMap:
+    name: ntp-config
+
+
+
+
+
+
