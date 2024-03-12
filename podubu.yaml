@@ -1,21 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: my-deployment
+  name: ntp-pod2
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-container
-        image: ntp-server2:latest
-        ports:
-        - containerPort: 123 
+  containers:
+  - name: ntp-container
 
+    image: localhost:5000/ntp-server2
+    ports:
+    - containerPort: 123
 
