@@ -7,7 +7,6 @@ spec:
   - name: ntp-container
 
     image: ntp-server2:latest
-    imagePullPolicy: Never
     ports:
     - containerPort: 123
 
