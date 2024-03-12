@@ -16,6 +16,6 @@ spec:
       - name: my-container
         image: ntp-server2:latest
         ports:
-        - containerPort: 80  # Port exposé par le conteneur
+        - containerPort: 123 
 
 
