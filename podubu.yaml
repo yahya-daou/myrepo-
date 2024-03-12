@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ntp-pod4
+  name: ntp-pod1
 spec:
   containers:
   - name: ntp-container
