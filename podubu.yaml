@@ -1,25 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ntp-pod2
+  name: ntp-pod3
 spec:
   containers:
   - name: ntp-container
     image: yahyadaoudi/servers:latest
-    volumeMounts:
-    - name: config-volume
-      mountPath: /etc/ntp.conf
-      subPath: ntp.conf
-    ports:
-    - containerPort: 123
-  imagePullPolicy: Never  
-  volumes:
-  - name: config-volume
-    configMap:
-      name: ntp-config
-
-
-
+   
 
 
 
