@@ -5,7 +5,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: ntp-pod2  
+    app: ntp-pod1
   ports:
     - protocol: TCP
       port: 123      
