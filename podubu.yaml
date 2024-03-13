@@ -6,20 +6,18 @@ spec:
   containers:
   - name: ntp-container
     image: yahyadaoudi/servers:latest
-      volumeMounts:
+    volumeMounts:
     - name: config-volume
       mountPath: /etc/ntp.conf
       subPath: ntp.conf
     ports:
     - containerPort: 123
-  imagePullPolicy: Never  
-volumes:
+  imagePullPolicy: Never
+  volumes:
   - name: config-volume
     configMap:
       name: ntp-config
-  
-  
-   
+
 
 
 
