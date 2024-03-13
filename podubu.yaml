@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ntp-pod2
+  name: ntp-pod3
 spec:
   containers:
   - name: ntp-container
@@ -12,12 +12,13 @@ spec:
       subPath: ntp.conf
     ports:
     - containerPort: 123
+    securityContext:
+      capabilities:
+        add:
+        - SYS_TIME          
   imagePullPolicy: Never
   volumes:
   - name: config-volume
     configMap:
       name: ntp-config
-
-
-
 
