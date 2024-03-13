@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ntp-pod2
+  name: ntp-pod3
 spec:
   containers:
   - name: ntp-container
@@ -11,7 +11,7 @@ spec:
       mountPath: /etc/ntp.conf
       subPath: ntp.conf
     ports:
-    - containerPort: 123
+    - containerPort: 1234
     securityContext:
       capabilities:
         add:
